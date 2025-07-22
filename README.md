@@ -2,7 +2,7 @@
 
 This document outlines a clean Flutter architecture, separating concerns into **Presentation** and **Data Layers** to enhance modularity, testability, and maintainability through clear responsibilities and interactions. But for this architecture (E1), modular only implement within Presentation Layer.
 
-![alt](diagram.png)
+![alt](pic/diagram.png)
 
 ## 1. Architecture Overview
 

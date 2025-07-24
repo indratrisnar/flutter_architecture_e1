@@ -1,0 +1,31 @@
+package_rename_config:
+  android:
+    app_name: Neytrip
+    package_name: com.fdelux.neytrip
+    override_old_package: com.example.fdelux_source_neytrip
+    lang: kotlin
+
+  ios:
+    app_name: Neytrip
+    bundle_name: neytrip
+    package_name: com.fdelux.neytrip
+
+  web:
+    app_name: Neytrip
+    description: UI Template Trip & Travel App
+
+  linux:
+    app_name: Neytrip
+    package_name: com.fdelux.neytrip
+    exe_name: neytrip-linux-x64
+
+  windows:
+    app_name: Neytrip
+    organization: FlutterDelux
+    copyright_notice: Copyright ©️ 2025 FlutterDelux. All rights reserved.
+    exe_name: neytrip-win32
+
+  macos:
+    app_name: Neytrip
+    package_name: com.fdelux.neytrip
+    copyright_notice: Copyright ©️ 2025 FDelux. All rights reserved.

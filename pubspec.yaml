@@ -9,18 +9,54 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # State management solution for Flutter, based on the BLoC pattern.
   flutter_bloc: ^8.1.3
-  http: ^1.2.1
-  fpdart: ^1.1.0
-  get_it: ^7.6.0
-  connectivity_plus: ^6.0.1
-  equatable: ^2.0.7
-  gap: ^3.0.1
-  extended_image: ^10.0.1
-  intl: ^0.20.2
-  flutter_rating_bar: ^4.0.1
+  # A robust routing package for Flutter, providing declarative navigation.
   go_router: ^15.1.3
+  # A utility package for managing dependencies (Service Locator).
+  get_it: ^7.6.0
+  # A package for immutable value objects and data classes.
+  equatable: ^2.0.7
+  # Functional programming utilities for Dart, inspired by Arrow.
+  fpdart: ^1.1.0
+
+  # Provides a way to persist key-value pairs.
+  shared_preferences: ^2.2.3
+  # A lightweight and user-friendly package for local data persistence.
   hive_flutter: ^1.1.0
+
+  # For making HTTP requests.
+  http: ^1.2.1
+  # Provides network connectivity status.
+  connectivity_plus: ^6.0.1
+  # For accessing the device's location.
+  geolocator: ^14.0.2
+  # Geocoding and reverse geocoding services.
+  geocoding: ^4.0.0
+  # A geospatial library for Dart, providing common geographic calculations.
+  latlong2: ^0.9.1
+  # A customizable and extensible map widget for Flutter.
+  flutter_map: ^8.1.1
+  # For launching URLs in the mobile platform.
+  url_launcher: ^6.3.1
+
+  # For internationalization and localization.
+  intl: ^0.20.2
+  # Enhanced image library for Flutter, providing advanced image functionalities.
+  extended_image: ^10.0.1
+  # A widget for displaying a smooth page indicator.
+  smooth_page_indicator: ^1.2.1
+  # A widget to display text with clickable links.
+  linkfy_text: ^1.1.6
+  # A Flutter widget for displaying items in a staggered grid arrangement.
+  flutter_staggered_grid_view: ^0.7.0
+  # A simple and flexible gap widget for creating spacing.
+  gap: ^3.0.1
+  # A highly customizable rating bar for Flutter.
+  flutter_rating_bar: ^4.0.1
+
+  # A flexible and configurable logging system for Dart.
+  logging: ^1.3.0
 
 dev_dependencies:
   flutter_test:

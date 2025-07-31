@@ -42,5 +42,49 @@ class AppRouter {
       ),
     ],
     initialLocation: '/home',
+    // refreshListenable: GoRouterRefreshStream(_authBloc.stream),
+    // redirect: (context, state) {
+    //   final currentPath = state.fullPath;
+    //   final authenticated = _authBloc.state is Authenticated;
+
+    //   final publicPaths = [
+    //     loadAppPath,
+    //     onboardingPath,
+    //     loginPath,
+    //     registerPath,
+    //   ];
+
+    //   if (authenticated) {
+    //     // has session
+    //     if (publicPaths.contains(currentPath)) {
+    //       return homePath; // redirect
+    //     }
+    //     return null; // no redirect
+    //   }
+
+    //   if (!authenticated) {
+    //     // no session
+    //     if (publicPaths.contains(currentPath)) {
+    //       return null; // no redirect
+    //     }
+    //     return onboardingPath; // redirect
+    //   }
+
+    //   return null; // No redirect
+    // },
   );
 }
+
+// class GoRouterRefreshStream extends ChangeNotifier {
+//   GoRouterRefreshStream(Stream<AuthState> stream) {
+//     _authSubscription = stream.listen((event) => notifyListeners());
+//   }
+
+//   late final StreamSubscription<AuthState> _authSubscription;
+
+//   @override
+//   void dispose() {
+//     _authSubscription.cancel();
+//     super.dispose();
+//   }
+// }

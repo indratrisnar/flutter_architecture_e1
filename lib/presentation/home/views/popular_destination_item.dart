@@ -73,7 +73,7 @@ class PopularDestinationItem extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 16.0),
-                        Icon(
+                        const Icon(
                           Icons.arrow_forward_outlined,
                           size: 20,
                           color: AppColors.textThin,

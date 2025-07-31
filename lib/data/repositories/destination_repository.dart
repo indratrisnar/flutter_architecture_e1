@@ -7,12 +7,6 @@ import 'package:fpdart/fpdart.dart';
 
 abstract class DestinationRepository {
   Future<Either<Failure, List<DestinationModel>>> fetchPopular();
-  Future<Either<Failure, List<DestinationModel>>> fetchNearby(
-    double latitude,
-    double longitude,
-    double radius,
-  );
-  Future<Either<Failure, DestinationModel>> findById(int id);
 }
 
 class DestinationRepositoryImpl implements DestinationRepository {
@@ -42,79 +36,11 @@ class DestinationRepositoryImpl implements DestinationRepository {
         NetworkFailure(message: 'Failed to connect to the network'),
       );
     } on UnauthenticatedException {
-      return const Left(UnauthenticatedFailure(message: ''));
-    } on ServerException {
       return const Left(
-        ServerFailure(message: 'Server error. Please try again'),
-      );
-    } catch (e) {
-      return Left(
-        UnexpectedFailure(
-          message: 'An unknown error occurred: ${e.toString()}',
+        UnauthenticatedFailure(
+          message: 'You are not authenticated. Please log in again.',
         ),
       );
-    }
-  }
-
-  @override
-  Future<Either<Failure, List<DestinationModel>>> fetchNearby(
-    double latitude,
-    double longitude,
-    double radius,
-  ) async {
-    try {
-      final connected = await _networkInfo.isConnected();
-      if (!connected) {
-        return const Left(
-          NoConnectionFailure(message: 'You are not connected to the network.'),
-        );
-      }
-
-      final destinations = await _destinationRemoteDataSource.fetchNearby(
-        latitude,
-        longitude,
-        radius,
-      );
-      return Right(destinations);
-    } on NetworkException {
-      return const Left(
-        NetworkFailure(message: 'Failed to connect to the network'),
-      );
-    } on UnauthenticatedException {
-      return const Left(UnauthenticatedFailure(message: ''));
-    } on ServerException {
-      return const Left(
-        ServerFailure(message: 'Server error. Please try again'),
-      );
-    } catch (e) {
-      return Left(
-        UnexpectedFailure(
-          message: 'An unknown error occurred: ${e.toString()}',
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<Either<Failure, DestinationModel>> findById(int id) async {
-    try {
-      final connected = await _networkInfo.isConnected();
-      if (!connected) {
-        return const Left(
-          NoConnectionFailure(message: 'You are not connected to the network.'),
-        );
-      }
-
-      final destinations = await _destinationRemoteDataSource.findById(id);
-      return Right(destinations);
-    } on NetworkException {
-      return const Left(
-        NetworkFailure(message: 'Failed to connect to the network'),
-      );
-    } on UnauthenticatedException {
-      return const Left(UnauthenticatedFailure(message: ''));
-    } on NotFoundException {
-      return const Left(NotFoundFailure(message: 'No Destination Found'));
     } on ServerException {
       return const Left(
         ServerFailure(message: 'Server error. Please try again'),

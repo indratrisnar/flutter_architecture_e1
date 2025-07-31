@@ -11,7 +11,7 @@ class CustomBackButton extends StatelessWidget {
       child: IconButton.filled(
         onPressed: () => context.pop(),
         style: IconButton.styleFrom(backgroundColor: backgroundColor),
-        icon: Icon(Icons.arrow_back, size: 20),
+        icon: const Icon(Icons.arrow_back, size: 20),
       ),
     );
   }

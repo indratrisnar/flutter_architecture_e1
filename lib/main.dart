@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_architecture_e1/common/app_colors.dart';
@@ -7,9 +9,23 @@ import 'package:flutter_architecture_e1/core/app_router.dart';
 import 'package:flutter_architecture_e1/core/di.dart' as di;
 import 'package:flutter_architecture_e1/presentation/home/bloc/popular_destination_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logging/logging.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  if (kDebugMode) {
+    Logger.root.level = Level.ALL;
+    Logger.root.onRecord.listen((record) {
+      log(
+        record.message,
+        name: '${record.level.name} - ${record.loggerName}',
+        error: record.error,
+        stackTrace: record.stackTrace,
+      );
+    });
+  }
+
   await di.init();
 
   if (Platform.isAndroid || Platform.isIOS) {

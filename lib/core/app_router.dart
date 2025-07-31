@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 class AppRouter {
   late final config = GoRouter(
-    debugLogDiagnostics: true,
+    // debugLogDiagnostics: true,
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {

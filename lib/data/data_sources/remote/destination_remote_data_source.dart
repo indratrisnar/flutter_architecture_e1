@@ -25,6 +25,9 @@ class DestinationRemoteDataSourceImpl implements DestinationRemoteDataSource {
        _client = client;
 
   Future<String> _getBearerToken() async {
+    // test purpose with limit token
+    return 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1IiwiZW1haWwiOiJkYXZpZGxlZTVAZXhhbXBsZS5jb20iLCJuYW1lIjoiRGF2aWQgTGVlIiwicm9sZSI6ImNvbW1vbl91c2VyIiwiaWF0IjoxNzUzOTg5MzY0LCJleHAiOjE3NTQxNjIxNjQsImlzcyI6Imh0dHBzOi8vZ2l0aHViLmNvbS9qb25hc3JvdXNzZWwvZGFydF9qc29ud2VidG9rZW4iLCJqdGkiOiIxNzUzOTg5MzY0NDM0In0.7QeYbP80hnpQgbF1lqFmHtUAnvZlQFjDzcirHOHEjPg';
+
     _logger.info('Attempting to retrieve bearer token.');
     final tokenModel = await _sessionLocalDataSource.getAuthToken();
     if (tokenModel == null || tokenModel.accessToken.isEmpty) {

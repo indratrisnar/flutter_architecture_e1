@@ -58,7 +58,7 @@ class PopularDestinationItem extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width * 0.6,
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: AppColors.textThin.withAlpha(50),
+                      color: AppColors.textSecondary.withAlpha(50),
                     ),
                     child: Row(
                       children: [
@@ -76,7 +76,7 @@ class PopularDestinationItem extends StatelessWidget {
                         const Icon(
                           Icons.arrow_forward_outlined,
                           size: 20,
-                          color: AppColors.textThin,
+                          color: AppColors.textSecondary,
                         ),
                       ],
                     ),
